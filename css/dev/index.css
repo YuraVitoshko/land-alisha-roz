@@ -1339,6 +1339,7 @@ textarea {
   row-gap: 1.5rem;
 }
 .form__input {
+  border-radius: 0 !important;
   border-bottom: 0.0625rem solid #AFBCDE;
   padding: 0.625rem 0rem;
   width: 100%;
@@ -1429,6 +1430,7 @@ textarea {
   pointer-events: all;
 }
 .popup__wrapper {
+  max-width: 22.5rem;
   background: #fff;
   border-radius: 1.25rem;
   width: 90%;

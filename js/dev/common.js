@@ -71,38 +71,6 @@ let slideToggle = (target, duration = 500) => {
     return slideUp(target, duration);
   }
 };
-let bodyLockStatus = true;
-let bodyUnlock = (delay = 500) => {
-  if (bodyLockStatus) {
-    const lockPaddingElements = document.querySelectorAll("[data-fls-lp]");
-    setTimeout(() => {
-      lockPaddingElements.forEach((lockPaddingElement) => {
-        lockPaddingElement.style.paddingRight = "";
-      });
-      document.body.style.paddingRight = "";
-      document.documentElement.removeAttribute("data-fls-scrolllock");
-    }, delay);
-    bodyLockStatus = false;
-    setTimeout(function() {
-      bodyLockStatus = true;
-    }, delay);
-  }
-};
-let bodyLock = (delay = 500) => {
-  if (bodyLockStatus) {
-    const lockPaddingElements = document.querySelectorAll("[data-fls-lp]");
-    const lockPaddingValue = window.innerWidth - document.body.offsetWidth + "px";
-    lockPaddingElements.forEach((lockPaddingElement) => {
-      lockPaddingElement.style.paddingRight = lockPaddingValue;
-    });
-    document.body.style.paddingRight = lockPaddingValue;
-    document.documentElement.setAttribute("data-fls-scrolllock", "");
-    bodyLockStatus = false;
-    setTimeout(function() {
-      bodyLockStatus = true;
-    }, delay);
-  }
-};
 function dataMediaQueries(array, dataSetValue) {
   const media = Array.from(array).filter((item) => item.dataset[dataSetValue]).map((item) => {
     const [value, type = "max"] = item.dataset[dataSetValue].split(",");
@@ -120,9 +88,6 @@ function dataMediaQueries(array, dataSetValue) {
 }
 export {
   slideUp as a,
-  bodyLock as b,
-  bodyUnlock as c,
   dataMediaQueries as d,
-  bodyLockStatus as e,
   slideToggle as s
 };
