@@ -5037,7 +5037,14 @@ document.addEventListener("DOMContentLoaded", function() {
   const month = months[tomorrow.getMonth()];
   const elements = document.querySelectorAll(".start-date");
   elements.forEach((el) => {
-    el.textContent = `Старт ${day} ${month}`;
+    const icon = el.querySelector("span");
+    if (icon) {
+      el.innerHTML = "";
+      el.appendChild(icon);
+      el.insertAdjacentText("beforeend", ` Старт ${day} ${month}`);
+    } else {
+      el.textContent = `Старт ${day} ${month}`;
+    }
   });
 });
 document.addEventListener("DOMContentLoaded", () => {

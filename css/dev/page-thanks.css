@@ -15,12 +15,10 @@
   align-items: center;
   column-gap: 0.5rem;
 }
-.thanks__subtitle::before {
-  content: "";
+.thanks__subtitle img {
   flex: 0 0 1.25rem;
   width: 1.25rem;
   height: 1.25rem;
-  background: url(../assets/img/icons/stars-hero.svg) 0 0 no-repeat;
 }
 .thanks__body {
   position: relative;
@@ -67,7 +65,7 @@
 }
 .thanks__image {
   position: absolute;
-  top: 1.5625rem;
+  top: 0.9375rem;
   right: -5rem;
   aspect-ratio: 290/520;
 }
