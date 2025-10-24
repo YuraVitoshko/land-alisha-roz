@@ -71,6 +71,9 @@ let slideToggle = (target, duration = 500) => {
     return slideUp(target, duration);
   }
 };
+function uniqArray(array) {
+  return array.filter((item, index, self) => self.indexOf(item) === index);
+}
 function dataMediaQueries(array, dataSetValue) {
   const media = Array.from(array).filter((item) => item.dataset[dataSetValue]).map((item) => {
     const [value, type = "max"] = item.dataset[dataSetValue].split(",");
@@ -89,5 +92,6 @@ function dataMediaQueries(array, dataSetValue) {
 export {
   slideUp as a,
   dataMediaQueries as d,
-  slideToggle as s
+  slideToggle as s,
+  uniqArray as u
 };

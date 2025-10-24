@@ -10,6 +10,13 @@
   border-bottom: 0.0625rem solid #E9EDFA;
   padding-bottom: 1.5rem;
   padding-top: 1.5rem;
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition: opacity 0.5s, transform 0.5s;
+}
+.spollers-faq__item.--watcher-view {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .spollers-faq__title {
@@ -64,6 +71,13 @@
   border-radius: 1.25rem;
   padding: 1.25rem;
   background-color: #fff;
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition: opacity 0.5s, transform 0.5s;
+}
+.program-course-spollers__item.--watcher-view {
+  opacity: 1;
+  transform: translateY(0);
 }
 .program-course-spollers__title {
   font-family: "Lora";
